@@ -1,0 +1,66 @@
+{% extends "main_template.html" %}
+
+{% block title %}نتایج جستجو | باغ فردوس{% endblock title %}
+
+{% block content %}
+
+{% if memories %}
+    {% for memory in memories %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{memory.memory_title}}</h5>
+                <p class='cart-text'>
+                    {{memory.memory_text}}
+                </p>
+                {% for image in memory.images.all %}
+                    <img src="{{media_url}}{{image.memory_image_name}}" alt="..." class='img-thumbnail img-300x200'>
+                {% endfor %}
+                <div>
+                    {% if memory.id in list_memory_liked_id %}
+                        <a href="#"><i class="fa fa-heart"></i></a>
+                    {% else %}
+                        <a onclick="like({{memory.id}})"><i id="icon_like{{memory.id}}" class="fa fa-heart-o"></i></a>
+                    {% endif %}
+                </div>    
+            </div>
+        </div>
+    {% endfor %}
+    <hr class="divider">
+    {% else %}
+    <h3 class="searh-text">خاطره ای با این عنوان وجود ندارد</h3>
+{% endif %}
+
+{% if workshops %}
+    <main>
+        <section class="workshoplist-section1">
+            {% for workshop in workshops %}
+                <section class="workshoplist-section1__1">
+                    <i class="glyphicon glyphicon-bullborn"></i>  
+                    <h2>{{workshop.title}}</h2>
+                </section>
+                <section class="workshoplist-section1__2">
+                    <img src="{{media_url}}{{workshop.image_name}}" alt={{workshop.title}} class="img-300x200">
+                </section>
+
+                <section class="workshoplist-section1__3">
+                    <span>تاریخ و زمان برگزاری: </span> <p>{{workshop.date_time}}</p>
+                    <span>مکان برگزاری: </span> <p>{{workshop.place}}</p>
+                    <span>مدرس: </span> <p>{{workshop.teacher}}</p>
+                    <span>اطلاعات بیشتر: </span> <p>{{workshop.information}}</p>
+                    {% comment %} {% if workshop.status_id == 1 %} {% endcomment %}
+                    <span>شرایط ثبت نام: </span> <p>{{workshop.registration}}</p>
+                    {% comment %} {% endif %}  {% endcomment %}
+                </section>
+                <section class="workshoplist-section1__4">
+                    {% if workshop.status_id == 3 %}
+                        <a class="btn btn-success" href="{% url 'workshops:workshopreport' workshop.id %}">مشاهده گزارش کارگاه</a>
+                    {% endif %}
+                </section>
+                <hr>
+            {% endfor %}
+        </section>
+    </main> 
+    {% else %}
+    <h3 class="searh-text">کارگاهی با این عنوان وجود ندارد</h3>
+{% endif %}
+{% endblock content %}   

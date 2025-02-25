@@ -1,0 +1,27 @@
+{% extends "main_template.html" %}
+{% load crispy_forms_tags %}
+{% block title %}نمایش خاطرات | باغ فردوس{% endblock title %}
+
+{% block content %}
+<h1>خاطرات ثبت شده درون سایت</h1>
+    {% for memory in memories %}
+        <div class='cart'>
+            <div class='cart-body'>
+                <h5 class='cart-title'>{{memory.memory_title}}</h5>
+
+                <p class='cart-text'>{{memory.memory_text}}</p>
+                {% for image in memory.images.all %}
+                    <img src="{{media_url}}{{image.memory_image_name}}" alt="..." class='img-thumbnail img-300x200'>
+                {% endfor %}
+                <div>
+                    {% if memory.id in list_memory_liked_id %}
+                        <a href="#"><i class="fa fa-heart"></i></a>
+                    {% else %}
+                        <a onclick="like({{memory.id}})"><i id="icon_like{{memory.id}}" class="fa fa-heart-o"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    
+{% endblock content %}   

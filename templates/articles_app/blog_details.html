@@ -1,0 +1,47 @@
+{% extends "main_template.html" %}
+{% block title %}مقاله | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <main class="articles-main">
+        <h1>{{article.title}}</h1>
+        <section class="articles-section-text">
+            <h4 class="articles-section-text-label">گروه مقاله: {{article.group}}</h4>
+            <span class="articles-section-text-label">نویسندگان: </span>
+            {% for i in articles_authors %}
+                {% for author in authors %}
+                    {% if author.id == i.author_id %}
+                        <span style="font-size:14px;">{{author.name}} {{author.family}}</span>&nbsp;&nbsp;&nbsp;
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+            <h4 class="articles-section-text-label">چکیده</h4>
+            <p>{{article.short_text}}</p>
+
+            <h4 class="articles-section-text-label">تعداد بازدید: {{article.view_number}}</h4>
+            <br>
+
+            <h4 class="articles-section-text-label">واژگان کلیدی</h4>
+            <p>{{article.key_words}}</p>
+
+            <h4 class="articles-section-text-label">متن مقاله</h4> 
+            <p>{{article.text}}</p>
+
+            <i class="glyphicon glyphicon-download-alt download-icon"></i>          
+            <a href="/blog/articlepdf/{{article.id}}">دانلود متن مقاله</a> 
+            <!--<a href="{% url "articles:article_pdf" article.id %}">دانلود متن مقاله</a>-->
+        </section>
+
+        <h4 class="articles-section-text-label">تصاویر مرتبط با مقاله</h4>
+
+        <section class="articles-section-gallery">
+
+            {% for image in image_List %}
+                <a target='_blank' href="{{media_url}}images/articles/article_{{article.id}}/{{image}}" alt='تصویر مقاله'>
+                    <img src="{{media_url}}images/articles/article_{{article.id}}/{{image}}" alt='تصویر مقاله' class="img-300x200">
+                </a>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock content %}   

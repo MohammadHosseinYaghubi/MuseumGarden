@@ -1,0 +1,24 @@
+{% extends "main_template.html" %}
+{% block title %}گزارش کارگاه ها | باغ فردوس{% endblock title %}
+{% block content %}
+    <main>
+        <section class="workshopreport-viewnumber">
+            <span>تعداد بازدید گزارش: <strong class="badg-success">{{workshop.view_number}} </strong>بازدید</span>
+        </section>
+        <hr>
+        <section class="workshopreport-section2">
+            <h3>متن گزارش کارگاه</h3>
+            {% autoescape off %}
+                {{workshop.report_text}}
+            {% endautoescape %}           
+        </section>
+        <section class="workshopreport-section3">
+            {% if image_list %}
+                {% for image in image_list %}
+                    <img src="{{media_url}}images/workshops/report/{{workshop.id}}/{{image}}" alt={{image}} class="img-300x200" >
+                {% endfor %}
+            {% endif %}
+        </section>
+
+    </main>
+{% endblock content %}   

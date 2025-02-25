@@ -1,0 +1,14 @@
+{% extends "main_template.html" %}
+
+{% block title %}بخش های باغ فردوس{% endblock title %}
+
+{% block content %} 
+    <h2>{{place.place_name}}</h2>
+    <img src="{{media_url}}/{{place.place_image_name}}" alt="">
+    <p>{{place.information}}</p>
+    <p>روزهای بازدید: {{place.visiting_day}}</p>
+    <p>ساعت بازدید: {{place.visiting_hour}}</p>
+    <p>قوانین و مقررات:  <span>((به این نکات کاربردی در هنگام بازدید از موزه ها توجه کنید))</span></p>
+    <p>{{place.rules}}</p>
+  
+{% endblock content %}   

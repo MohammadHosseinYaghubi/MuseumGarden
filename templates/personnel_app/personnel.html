@@ -1,0 +1,31 @@
+{% extends "main_template.html" %}
+
+{% block title %}کارکنان | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <main class="flip">
+        <section class="personnel-section1">
+            <h2 class="personnel">کارکنان</h2>
+            {% for person in personnel %}
+                <section class="personnellist-section1__1">
+                    <i class="glyphicon glyphicon-bullborn"></i>  
+                    {% if person.image_name %}
+                        <img src="{{media_url}}{{person.image_name}}" alt={{person.family}} class="img-300x200">
+                    {% endif %}
+                </section>
+                <section class="personnellist-section1__2">
+                    <p></p>
+                    <p>{{person.name}}    {{person.family}}</p>
+                    <p>{{person.position}}</p>
+                    <p>
+                        <span>تلفن </span> <a>{{person.email}}</a>
+                        <br>
+                        <span>ایمیل: </span> <a>{{person.mobile_number}}</a>
+                    </p>   
+                    <p>&nbsp;</p> 
+                </section>
+                <br>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock content %}

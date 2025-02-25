@@ -1,0 +1,94 @@
+{% extends "main_template.html" %}
+{% block title %}کارگاه ها | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <main>
+        <section class="workshoplist-section1">
+            {% for workshop in workshops %}
+                <section class="workshoplist-section1__1">
+                    <i class="glyphicon glyphicon-bullborn"></i>  
+                    <h2>{{workshop.title}}</h2>
+                </section>
+                <section class="workshoplist-section1__2">
+                    <img src="{{media_url}}{{workshop.image_name}}" alt={{workshop.title}} class="img-300x200">
+                </section>
+
+                <section class="workshoplist-section1__3">
+                    <span>تاریخ و زمان برگزاری: </span> <p>{{workshop.date_time}}</p>
+                    <span>مکان برگزاری: </span> <p>{{workshop.place}}</p>
+                    <span>مدرس: </span> <p>{{workshop.teacher}}</p>
+                    <span>اطلاعات بیشتر: </span> <p>{{workshop.information}}</p>
+                    {% comment %} {% if workshop.status_id == 1 %} {% endcomment %}
+                    <span>شرایط ثبت نام: </span> <p>{{workshop.registration}}</p>
+                    {% comment %} {% endif %}  {% endcomment %}
+                </section>
+                <section class="workshoplist-section1__4">
+                    {% if workshop.status_id == 3 %}
+                        <a class="btn btn-success" href="{% url 'workshops:workshopreport' workshop.id %}">مشاهده گزارش کارگاه</a>
+                    {% endif %}
+                </section>
+                <hr>
+            {% endfor %}
+        </section>
+    </main>
+    
+    <!--pagination-->
+    <nav aria-label='Page navigation example'>
+        <ul class="pagination justify-content-center">
+        <!--Previous-->
+        {% if page_obj.has_previous %}
+            <li class="page-item ">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">قبلي</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled ">
+                <a class='page-link'  href="#" tabindex='-1' aria-disabled='True'>قبلي</a>
+            </li>
+        {% endif %}   
+        <!--end Previous-->
+     
+        <!--Hellip-->
+        {% if page_obj.number|add:'-4' > 1 %}
+            <li class="page-item"><a class="page-link" href="?page={{page.obj.number|add:'-5' }}">&hellip;</a></li>
+        {% endif %}
+        <!--end Hellip-->
+             
+        <!--Pager-->
+        {% for i in page_obj.paginator.page_range  %}
+            {% if page_obj.number == i %}
+                <li class="page-item active" aria-current='page'>
+                    <span class='page-link'>
+                        {{ i }}
+                    <span class='sr-only'>(current)</span>
+                    </span>
+                </li>
+            {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %} 
+        {% endfor %}
+        <!--end Pager-->
+                                
+        <!--Hellip-->
+        {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+            <li class='page-item'><a  class='page-link' href="?page={{ page_obj.number|add:'5' }}">&hellip;</a>
+            </li>
+        {% endif %}
+        <!--end Hellip-->
+      
+        <!--Next-->
+        {% if page_obj.has_next %}
+            <li class='page-item'>
+                <a  class='page-link' href="?page={{ page_obj.next_page_number }}">بعدي</a>
+            </li>
+        {% else %}
+            <li class='page-item disabled'>  
+                <a  class='page-link' href="#" tabindex='-1' aria-disabled='True'>بعدي</a>
+            </li>
+        {% endif %}
+        <!--end Next-->
+        </ul>
+    </nav> 
+    <!--end pagination-->
+
+
+{% endblock content %}   

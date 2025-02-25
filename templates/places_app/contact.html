@@ -1,0 +1,74 @@
+{% extends "main_template.html" %}
+
+{% block title %}تماس با ما | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <main class="contact-main">
+        <section class="contact-info">
+            <h2>اطلاعات تماس</h2>
+            <br>
+            <p>
+                <i class="glyphicon glyphicon-home">
+                </i>استان تهران، تهران، خیابان ولیعصر، نرسیده به میدان تجریش، کوچه بخشایش،
+                کد پستی : 43946-19617 
+                <br>
+                <i class="glyphicon glyphicon-phone-alt"></i>
+                02122705005
+                <br>
+                <i class="glyphicon glyphicon-envelope"></i>
+                irancinemammuseum@gmail.com
+                <br><br>
+            </p>
+                <h2>مسیرهای دسترسی </h2>
+                <br>
+            <p>
+                <i class="glyphicon glyphicon-road"></i>
+                اگر میخواهید با خودروی شخصی به باغ فردوس تهران بروید، باید خودتان را به خیابان ولیعصر برسانید و به سمت تجریش بروید. مسیر را تا قبل از میدان تجریش ادامه دهید و خودرو را در کوچه های اطراف منتهی به خیابان طوسی، بالاتر از باغ فردوس پارک کنید. پارکینگ عمومی میدان تجریش هم گزینه ی مناسبی برای پارک کردن خودرو است. خودرو را در پارکینگ
+                پارک کنید و به سمت جنوب خیابان ولیعصر پیاده بروید تا به باغ فردوس برسید.
+                <br><br>
+                <i class="glyphicon glyphicon-road"></i>
+                اگر میخواهید از وسایل حمل و نقل عمومی استفاده کنید، باز هم انتخاب های متعددی دارید. میتوانید اتوبوس تندرو یا BRT خط راه آهن-
+                تجریش را سوار شوید و در ایستگاه باغ فردوس که روبروی خیابان باغ فردوس است، پیاده شوید. راه دیگر هم این است که در ضلع جنوبی میدان تجریش، سوار مینی بوس های خط تجریش - ولنجک یا خط تجریش - درکه شوید و در باغ فردوس پیاده شوید.
+                <br><br>
+                <i class="glyphicon glyphicon-road"></i>
+                رفتن به باغ فردوس با مترو هم امکان پذیر است. ایستگاه مترو تجریش نزدیکترین ایستگاه مترو به باغ فردوس است. با یک ربع پیاده روی به سمت جنوب
+                خیابان ولیعصر میتوانید خودتان را از ایستگاه مترو تجریش به باغ فردوس برسانید.
+            </p>   
+            <a href="" target='_blank'>مسیر دسترسی 
+            {% comment %} <img src="{{media_url}}images/location/img2.jpg" alt="مسیر دسترسی" class="locationl-img">{% endcomment %}
+            </a> 
+        </section>
+
+        <section class="contact-form">
+            <h2>ارتباط شما با ما</h2>
+            <br>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div>
+                    <div>
+                        <label for="id_full_Name">نام و نام خانوادگی</label></div>
+                        {{form.full_name}}
+                    </div>
+                    <br>
+                    <div>
+                        <div><label for="id_email">آدرس ایمیل</label></div>
+                        {{form.email}}
+                    </div>
+                    <br>
+                    <div>
+                        <div><label for="id_subject">موضوع پیغام</label></div>
+                        {{form.subject}}
+                    </div>
+                    <br>
+                    <div>
+                        <div><label for="id_message">پیغام شما</label></div>
+                        {{form.message}}
+                    </div>
+                    <br>
+                    <input type='submit' value="ارسال پیام" class="btn btn-primary btn-xl btn-block">
+                </form>
+            </div>
+        </section>
+    </main> 
+
+{% endblock content %}   

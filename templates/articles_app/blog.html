@@ -1,0 +1,46 @@
+{% extends "main_template.html" %}
+
+{% block title %}مقالات | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <main class="articles-main">
+        <h1 style="text-align:center;">مقاله ها</h1>
+        <hr>
+        {% for article in articles %}
+            {% if article.is_active == True %}
+                <section class="articles-section">
+                    <section class="articles-section-text">
+                        <h3>{{article.title}}</h3>
+                        <br>
+                        <p>{{article.short_text}}</p>
+                        {% for i in articles_authors %}
+                            {% if i.article_id == article_id %}
+                                {% for author in authors %}
+                                    {% if author.id == i.author_id %}
+                                        <span>{{author.name}} {{author.family}} &nbsp;&nbsp;&nbsp;</span>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        <div>
+                            <i class="fa fa-list-alt"></i> <span>{{article.group}}</span>
+                            <br>
+                            <i class="fa fa-calender"></i> <span>{{article.update_date}}</span>
+                            <br>
+                            <i class="fa fa-eye"></i> <span>{{article.view_number}}</span>
+                            <br>
+                            <a href="/blog/{{article.slug}}">مشاهده مقاله</a>
+                            <br>
+                        </div>
+                        <h3>{{article.slug}}</h3>
+                    </section>
+                    <section class="articles-section-img">
+                        <img src="{{media_url}}images/articles/{{article.image_name}}" alt='تصویر اصلی مقاله'>
+                    </section>
+                </section>
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </main>
+
+{% endblock content %}   

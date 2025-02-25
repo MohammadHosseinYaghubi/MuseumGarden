@@ -1,0 +1,14 @@
+{% extends "main_template.html" %}
+
+{% block title %}ورود | باغ فردوس{% endblock title %}
+
+{% block content %}
+    <div class="row justify-content-md-center">
+        <form action="" method="post" class="col-md-6">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="ورود" class="btn btn-primary btn-block">
+        </form>
+    </div>
+
+{% endblock content %}   
