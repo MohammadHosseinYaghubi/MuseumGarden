@@ -1,6 +1,6 @@
 # ----------------------------------------------------------
 # Project: Django Application
-# Author: mh.yaghubi
+# Author: MohammadHossein Yaghubi
 # Copyright © 2023 mh.yaghubi. All rights reserved.
 # ----------------------------------------------------------
 """
