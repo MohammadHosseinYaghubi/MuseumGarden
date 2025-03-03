@@ -1,3 +1,8 @@
+# ----------------------------------------------------------
+# Project: Django Application
+# Author: mh.yaghubi
+# Copyright © 2023 mh.yaghubi. All rights reserved.
+# ----------------------------------------------------------
 """
 Django settings for museumgarden project.
 
