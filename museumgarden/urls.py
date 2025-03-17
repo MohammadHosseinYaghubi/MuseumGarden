@@ -20,7 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('lord-my-mh-admino/', admin.site.urls),
     path('', include('apps.main.urls', namespace='main')),
     path('places/', include('apps.places.urls', namespace='places')),
     path('blog/', include('apps.articles.urls', namespace='articles')),
@@ -34,3 +35,4 @@ urlpatterns = [
     path('search/', include('apps.search.urls', namespace='search')),
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+handeler404='apps.main.views.handeler404'

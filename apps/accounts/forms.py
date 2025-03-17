@@ -25,6 +25,7 @@ class RegisterUserForm(forms.ModelForm):
     password2=forms.CharField(label='تکرار رمز عبور', widget=forms.PasswordInput(attrs=
                             {'class':'form-control','placeholder':'تکرار رمز عبور را وارد کنید'}),
                             )
+    honeypot = forms.CharField(required=False, widget=forms.HiddenInput)
     
     class Meta:
         model= User
@@ -55,3 +56,4 @@ class LoginUserForm(forms.Form):
                             error_messages={"required":"این فیلد نمی تواند خالی باشد"},
                             widget=forms.PasswordInput(attrs={'class':'form-control','placeholder':'رمز عبور را وارد کنید'}),
                             )
+    honeypot = forms.CharField(required=False, widget=forms.HiddenInput)

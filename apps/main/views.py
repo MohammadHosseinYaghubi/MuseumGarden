@@ -10,3 +10,5 @@ def index(request):
     return render(request, 'main_app/index.html')
 
 #--------------------------------------------------------------------
+def handeler404(request,exception=None):
+    return render(request, 'main_app/404.html')
