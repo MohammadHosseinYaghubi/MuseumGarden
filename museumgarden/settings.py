@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'apps.search.apps.SearchConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'honeypot',
+    'admin_honeypot',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
