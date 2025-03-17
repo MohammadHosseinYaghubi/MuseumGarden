@@ -35,4 +35,6 @@ urlpatterns = [
     path('search/', include('apps.search.urls', namespace='search')),
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
++ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
 handeler404='apps.main.views.handeler404'
