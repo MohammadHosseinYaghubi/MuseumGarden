@@ -31,3 +31,6 @@ This website has been designed for the **Ferdows Garden Museum** complex and inc
 
 This website aims to provide a comprehensive platform for managing the museum's operations, engaging with visitors, and showcasing the rich cultural and historical heritage of the Ferdows Garden Museum.
 
+## Support This Project
+If you found this project helpful or enjoyed using it, we would greatly appreciate your support! Giving a ⭐️ star on GitHub not only motivates us but also helps others discover this project. Thank you for your kindness and encouragement!
+
