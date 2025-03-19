@@ -32,7 +32,9 @@ urlpatterns = [
     path('gallery/', include('apps.gallery.urls', namespace='gallery')),
     path('personnel/', include('apps.personnel.urls', namespace='personnel')),
     
-    path('search/', include('apps.search.urls', namespace='search')),
-    
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    path('search/', include('apps.search.urls', namespace='search')), 
+] 
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns +=  static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
 handeler404='apps.main.views.handeler404'
