@@ -271,18 +271,48 @@ font-weight: 500;
 	width: 22px;
 	margin-left: 2px
 }
-@media (max-width:767px) {
-	.footer-contacts {
-		text-align: center
-	}
-	.footer-contacts__title {
-		font-size: 28px;
-		margin-bottom: 16px
-	}
-	.footer-contacts__text {
-		padding: 0
-	}
+/* برای دستگاه‌های با عرض کمتر از 768px */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
 }
+
+/* برای دستگاه‌های با عرض کمتر از 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+.container {
+    width: 100%; /* عرض کامل صفحه */
+    padding: 1rem; /* padding نسبی */
+}
+
+.sidebar {
+    width: 25%; /* عرض نسبی */
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    flex: 1 1 200px; /* عناصر به صورت ریسپانسیو تغییر می‌کنند */
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
 .footer-links__list {
 	font-size: 16px;
 	line-height: 28px;
@@ -297,15 +327,7 @@ font-weight: 500;
 .footer-links__list a:hover {
 	color: #ee4156
 }
-@media (max-width:767px) {
-	.footer-links__title {
-		margin-bottom: 12px
-	}
-	.footer-links {
-		margin-top: 42px;
-		text-align: center
-	}
-}
+
 .media_image-3 {
 	margin: 30px 0 30px 0;
 }
