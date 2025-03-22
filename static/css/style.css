@@ -138,14 +138,28 @@ a:hover {
 	font-size: 14px;
 	margin: 5px;
 }
+/* استایل‌های پایه */
+main {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+
 .workshoplist-section1{
-	margin: 30px;
+	direction: rtl;
+	padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 20px;
+	
 }
 .workshoplist-section1__1 {
 	direction: rtl;
 	border: 1px solid rgb(185,237,81);
 	background-color: rgb(210,237,156);
 	font-family: 'koodakbold';
+	text-align: center;
 	font-size: 18px;
 	margin: 10px 30px;
 }
@@ -157,15 +171,20 @@ a:hover {
 }
 .workshoplist-section1__2 {
 	margin: 10px 30px;
-	padding-right: 500px;
+	display: flex;
+    justify-content: center;
 }
 .workshoplist-section1__2 img{
 	width: 300px;
-	height: 200px;
+	margin: 10px;
+    border-radius: 10px;
 }
 .workshoplist-section1__3,
 .workshoplist-section1__4 {
 	direction: rtl;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
 	margin: 10px 30px;
 }
 .workshoplist-section1__3 span {
@@ -213,6 +232,13 @@ a:hover {
 	font-size: 16px;
 	color: green;
 	margin-right: 100px;
+}
+
+.pagination {
+	direction: rtl;
+	display: flex !important;
+    justify-content: center;
+	margin: 20px 20px;
 }
 
 hr.divider{
@@ -300,6 +326,7 @@ font-weight: 500;
 .container {
     display: flex;
     flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .item {
