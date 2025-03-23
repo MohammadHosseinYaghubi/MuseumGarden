@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'مکان',
                 'verbose_name_plural': 'مکانها',
-                'db_table': 't_Places',
+                'db_table': 't_places',
             },
         ),
         migrations.CreateModel(
