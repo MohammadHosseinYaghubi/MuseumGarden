@@ -1,10 +1,5 @@
-{% extends "main_template.html" %}
-{% load render_partial %}
-{% block title %}
-    باغ موزه فردوس
-{% endblock title %}
-{% block content %}
-    <div style="width:80%; height:500px; margin:20px auto; display: flex; justify-content: space-between;">
-        <h1 style="text-align:center; color:red; font-size:3rem;">Error 404</h1>
-    </div>
-{% endblock content %}
+<div style="width:80%; height:500px; margin:20px auto; display: block; justify-content: space-between;">
+    <h1 style="text-align:center; color:red; font-size:3rem;">404 - صفحه مورد نظر یافت نشد</h1>
+    <h3 style="text-align:center;">متأسفیم، اما به نظر می‌رسد صفحه‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.</h2>
+    <a href="{% url 'main:index' %}"> &nbsp; بازگشت به صفحه اصلی</a>
+</div>
