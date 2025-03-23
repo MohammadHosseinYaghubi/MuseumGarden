@@ -73,24 +73,22 @@ a:hover {
 .value1{
 	color:red;
 }
-
 .contact-main{
 	display: flex;
 	flex-wrap: wrap;
-	padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .contact-form{
 	direction: rtl;
-	padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    margin: 20px 5px;
+    margin: 20px 0px;
+    padding-left: 15px;
 }
 .contact-info{
 	direction: rtl;
-	margin: 20px 20px;
 }
 .contact-form h2, .contact-info h2{
 	font-family: 'yekan';
@@ -101,7 +99,7 @@ a:hover {
 	font-size: 16px;
 }
 #id_full_name, .contact-form input[type='email'], #id_subject, #id_message{
-	width: 400px;
+	width: 300px;
 	font-family: 'yekan';
 	font-size: 16px;
 } 
@@ -138,13 +136,6 @@ a:hover {
 	font-size: 14px;
 	margin: 5px;
 }
-/* استایل‌های پایه */
-main {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 20px;
-}
-
 
 .workshoplist-section1{
 	direction: rtl;

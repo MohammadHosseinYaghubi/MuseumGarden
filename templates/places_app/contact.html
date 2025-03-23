@@ -3,7 +3,7 @@
 {% block title %}تماس با ما | باغ فردوس{% endblock title %}
 
 {% block content %}
-    <main class="contact-main">
+    <main class="contact-main" role="main">
         <section class="contact-info">
             <h2>اطلاعات تماس</h2>
             <br>
@@ -34,8 +34,7 @@
                 رفتن به باغ فردوس با مترو هم امکان پذیر است. ایستگاه مترو تجریش نزدیکترین ایستگاه مترو به باغ فردوس است. با یک ربع پیاده روی به سمت جنوب
                 خیابان ولیعصر میتوانید خودتان را از ایستگاه مترو تجریش به باغ فردوس برسانید.
             </p>   
-            <a href="" target='_blank'>مسیر دسترسی 
-            {% comment %} <img src="{{media_url}}images/location/img2.jpg" alt="مسیر دسترسی" class="locationl-img">{% endcomment %}
+            <a href="" target='_blank' class="btn btn-outline-primary">مسیر دسترسی 
             </a> 
         </section>
 
@@ -65,6 +64,7 @@
                         {{form.message}}
                     </div>
                     <br>
+                    <!-- دکمه ارسال پیام -->
                     <input type='submit' value="ارسال پیام" class="btn btn-primary btn-xl btn-block">
                 </form>
             </div>
