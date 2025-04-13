@@ -4,7 +4,6 @@ from .forms import RegisterUserForm, LoginUserForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from honeypot.decorators import check_honeypot
 
 #------------------------------------------------------------------------------------
 class RegisterUserView(View):
@@ -14,7 +13,6 @@ class RegisterUserView(View):
         form = RegisterUserForm()
         return render(request, self.template_name, {"form":form})
     
-    @check_honeypot
     def post(self, request,*args,**kwargs):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
@@ -40,7 +38,6 @@ class LoginUserView(View):
         form = LoginUserForm()
         return render(request, self.template_name, {"form":form})
     
-    @check_honeypot
     def post(self,request,*args,**kwargs):
         form=LoginUserForm(request.POST)
         if form.is_valid():
