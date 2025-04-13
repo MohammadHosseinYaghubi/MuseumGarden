@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
-    path('lord-my-mh-admino/', admin.site.urls),
+    path('my-admin/', admin.site.urls),
     path('', include('apps.main.urls', namespace='main')),
     path('places/', include('apps.places.urls', namespace='places')),
     path('blog/', include('apps.articles.urls', namespace='articles')),
