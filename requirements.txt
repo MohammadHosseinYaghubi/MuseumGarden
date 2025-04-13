@@ -2,7 +2,7 @@ asgiref==3.8.1
 crispy-bootstrap4==2024.1
 Django==5.2
 django-honeypot==1.2.1
-django-admin-honeypot==1.1.0
+django-admin-honeypot-updated-2021==1.2.0
 mysql-connector-python==8.3.0
 pillow==10.3.0
 sqlparse==0.4.4
